@@ -1,0 +1,46 @@
+baseURL = "https://example.org/"
+languageCode = "en"
+title = "Nemanja Tomic - Blogging About Tech"
+
+[params]
+description = "My personal blog where I write about IT and philosophy."
+author = "Nemanja Tomic"
+heroTitle = "Thoughtful writing on software, systems, and the ideas around them."
+heroText = "A personal technical blog focused on practical IT work, engineering habits, and the philosophical questions that shape how we build."
+contactFormAction = "https://example-form-provider.invalid/submit"
+contactFormMethod = "POST"
+contactEmail = "hello@example.com"
+
+[taxonomies]
+tag = "tags"
+
+[markup]
+  [markup.highlight]
+  noClasses = false
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+    unsafe = true
+
+[permalinks]
+posts = "/posts/:slug/"
+
+[menus]
+  [[menus.main]]
+  name = "Home"
+  pageRef = "/"
+  weight = 10
+
+  [[menus.main]]
+  name = "Posts"
+  pageRef = "/posts"
+  weight = 20
+
+  [[menus.main]]
+  name = "About"
+  pageRef = "/about"
+  weight = 30
+
+  [[menus.main]]
+  name = "Contact"
+  pageRef = "/contact"
+  weight = 40

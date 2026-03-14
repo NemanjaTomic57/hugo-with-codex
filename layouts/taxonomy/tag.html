@@ -1,0 +1,16 @@
+{{ define "main" }}
+  <section class="page-section container">
+    <header class="page-header">
+      <p class="eyebrow">Tag Archive</p>
+      <h1>Posts tagged "{{ .Title }}"</h1>
+      <p class="page-copy">Browse everything published under this topic.</p>
+    </header>
+    <div class="post-grid">
+      {{ range .Pages.ByDate.Reverse }}
+        {{ partial "post-card.html" . }}
+      {{ else }}
+        <p>No posts found for this tag.</p>
+      {{ end }}
+    </div>
+  </section>
+{{ end }}

@@ -1,0 +1,17 @@
+{{ define "main" }}
+  <section class="page-section container">
+    <header class="page-header">
+      <p class="eyebrow">Explore Topics</p>
+      <h1>{{ .Title }}</h1>
+      <p class="page-copy">Browse posts by tag.</p>
+    </header>
+    <div class="terms-grid">
+      {{ range .Data.Terms.Alphabetical }}
+        <a class="term-card" href="{{ .Page.RelPermalink }}">
+          <span class="term-name">{{ .Page.Title }}</span>
+          <span class="term-count">{{ .Count }} post{{ if ne .Count 1 }}s{{ end }}</span>
+        </a>
+      {{ end }}
+    </div>
+  </section>
+{{ end }}

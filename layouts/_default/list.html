@@ -1,0 +1,19 @@
+{{ define "main" }}
+  <section class="page-section container">
+    <header class="page-header">
+      <p class="eyebrow">{{ .Section | default "Browse" | title }}</p>
+      <h1>{{ .Title }}</h1>
+      {{ with .Content }}
+        <div class="page-copy">{{ . }}</div>
+      {{ end }}
+    </header>
+
+    <div class="post-grid">
+      {{ range .Pages.ByDate.Reverse }}
+        {{ partial "post-card.html" . }}
+      {{ else }}
+        <p>No posts published yet.</p>
+      {{ end }}
+    </div>
+  </section>
+{{ end }}

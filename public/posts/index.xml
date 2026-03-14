@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Nemanja Tomic - Blogging About Tech</title>
+    <link>http://localhost:42385/posts/</link>
+    <description>Recent content in Posts on Nemanja Tomic - Blogging About Tech</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 10 Feb 2026 09:00:00 +0100</lastBuildDate>
+    <atom:link href="http://localhost:42385/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Building Calm Operational Routines</title>
+      <link>http://localhost:42385/posts/building-calm-operational-routines/</link>
+      <pubDate>Tue, 10 Feb 2026 09:00:00 +0100</pubDate>
+      <guid>http://localhost:42385/posts/building-calm-operational-routines/</guid>
+      <description>Reliable IT work often comes from repeatable habits that reduce stress before incidents ever happen.</description>
+    </item>
+    <item>
+      <title>How to Think About Technical Debt Without Panic</title>
+      <link>http://localhost:42385/posts/how-to-think-about-technical-debt/</link>
+      <pubDate>Thu, 22 Jan 2026 09:30:00 +0100</pubDate>
+      <guid>http://localhost:42385/posts/how-to-think-about-technical-debt/</guid>
+      <description>Technical debt becomes easier to manage when it is treated as a portfolio of trade-offs instead of a moral failure.</description>
+    </item>
+    <item>
+      <title>Why Clear Documentation Still Matters</title>
+      <link>http://localhost:42385/posts/why-clear-documentation-matters/</link>
+      <pubDate>Fri, 05 Dec 2025 08:15:00 +0100</pubDate>
+      <guid>http://localhost:42385/posts/why-clear-documentation-matters/</guid>
+      <description>Documentation is not busywork; it is part of the interface between systems, teams, and future decisions.</description>
+    </item>
+  </channel>
+</rss>

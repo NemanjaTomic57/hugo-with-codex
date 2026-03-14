@@ -1,0 +1,35 @@
+{{ define "main" }}
+  <section class="hero">
+    <div class="container hero-inner">
+      <div>
+        <p class="eyebrow">Personal Technical Blog</p>
+        <h1>{{ site.Title }}</h1>
+        <p class="hero-subtitle">{{ site.Params.description }}</p>
+        <p class="hero-copy">{{ site.Params.heroText }}</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="{{ `/posts/` | relLangURL }}">Read the posts</a>
+          <a class="button button-secondary" href="{{ `/about/` | relLangURL }}">About the author</a>
+        </div>
+      </div>
+      <aside class="hero-panel">
+        <h2>What you'll find here</h2>
+        <p>Short essays and long-form posts on engineering practice, technical decision making, systems thinking, and the human side of work in IT.</p>
+      </aside>
+    </div>
+  </section>
+
+  <section class="page-section container">
+    <div class="section-heading">
+      <div>
+        <p class="eyebrow">Latest Writing</p>
+        <h2>Recent posts</h2>
+      </div>
+      <a class="text-link" href="{{ `/posts/` | relLangURL }}">View all posts</a>
+    </div>
+    <div class="post-grid">
+      {{ range first 3 (where site.RegularPages.ByDate.Reverse "Section" "posts") }}
+        {{ partial "post-card.html" . }}
+      {{ end }}
+    </div>
+  </section>
+{{ end }}

@@ -1,0 +1,48 @@
+{{ define "main" }}
+  {{ $posts := .Pages.ByDate.Reverse }}
+  {{ $allTags := slice }}
+  {{ range $posts }}
+    {{ range .Params.tags }}
+      {{ $allTags = $allTags | append . }}
+    {{ end }}
+  {{ end }}
+  {{ $uniqueTags := $allTags | uniq | sort }}
+
+  <section class="page-section container">
+    <header class="page-header">
+      <p class="eyebrow">All Posts</p>
+      <h1>{{ .Title }}</h1>
+      <div class="page-copy">{{ .Content }}</div>
+    </header>
+
+    {{ if $uniqueTags }}
+      <div class="tag-filter" data-tag-filter>
+        <div class="tag-filter-header">
+          <h2>Filter by tag</h2>
+          <button class="tag-filter-reset" type="button" data-tag-reset aria-pressed="true">All posts</button>
+        </div>
+        <div class="tag-filter-options" role="toolbar" aria-label="Filter posts by tag">
+          {{ range $uniqueTags }}
+            <button class="tag-filter-button" type="button" data-tag="{{ . | urlize }}" aria-pressed="false">
+              {{ . }}
+            </button>
+          {{ end }}
+        </div>
+      </div>
+    {{ end }}
+
+    <div class="post-grid" data-post-list>
+      {{ range $posts }}
+        <div class="filterable-post" data-post-tags="{{ delimit (apply .Params.tags `urlize` `.`) `,` }}">
+          {{ partial "post-card.html" . }}
+        </div>
+      {{ else }}
+        <p>No posts published yet.</p>
+      {{ end }}
+    </div>
+  </section>
+
+  {{ with resources.Get "js/tag-filter.js" }}
+    <script src="{{ .RelPermalink }}" defer></script>
+  {{ end }}
+{{ end }}
